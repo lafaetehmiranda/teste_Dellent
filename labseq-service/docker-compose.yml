@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  labseq-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - QUARKUS_HTTP_HOST=0.0.0.0
