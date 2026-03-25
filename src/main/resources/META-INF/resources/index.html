@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LabSeq Sequence Calculator UI using Quarkus">
+    <title>LabSeq Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="blob shape-1"></div>
+        <div class="blob shape-2"></div>
+        <div class="blob shape-3"></div>
+    </div>
+    
+    <main class="glass-container">
+        <header>
+            <h1>LabSeq <span>Calculator</span></h1>
+            <p>Compute values for the sequence l(n)</p>
+        </header>
+
+        <section class="calculator-section">
+            <form id="calc-form">
+                <div class="input-group">
+                    <label for="n-input">Enter Index (n)</label>
+                    <input type="number" id="n-input" max="100000" min="0" placeholder="e.g. 10" required />
+                </div>
+                <button type="submit" id="submit-btn">
+                    <span class="btn-text">Calculate</span>
+                    <div class="spinner disable" id="loading-spinner"></div>
+                </button>
+            </form>
+            
+            <div id="result-box" class="result-box hidden">
+                <h3>Result:</h3>
+                <div class="result-value-container">
+                    <p id="result-value">-</p>
+                </div>
+                <div class="stats">
+                    <small>Calculation time: <span id="time-taken">0</span>ms</small>
+                </div>
+            </div>
+            <div id="error-box" class="error-box hidden">
+                <p id="error-msg">An error occurred.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
